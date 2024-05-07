@@ -1,19 +1,24 @@
-import java.util.*;
+class Slot {
+    private int slotNumber;
+    private Car parkedCar;
 
-class Car {
-    private String registrationNo;
-    private int driverAge;
-
-    public Car(String registrationNo, int driverAge) {
-        this.registrationNo = registrationNo;
-        this.driverAge = driverAge;
+    public Slot(int slotNumber) {
+        this.slotNumber = slotNumber;
     }
 
-    public String getRegistrationNo() {
-        return registrationNo;
+    public boolean isSlotFree() {
+        return this.parkedCar == null;
     }
 
-    public int getDriverAge() {
-        return driverAge;
+    public void park(Car car) {
+        this.parkedCar = car;
+    }
+
+    public void removeCar() {
+        this.parkedCar = null;
+    }
+
+    public Car getParkedCar() {
+        return this.parkedCar;
     }
 }
