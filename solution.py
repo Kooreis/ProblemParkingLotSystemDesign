@@ -1,5 +1,8 @@
-class ParkingLot:
-    def __init__(self, size):
-        self.size = size
-        self.slots = [None] * size
-        self.available_slots = list(range(size))
+def park(self, vehicle):
+        if len(self.available_slots) == 0:
+            print("Parking lot is full.")
+            return None
+        slot = self.available_slots.pop(0)
+        self.slots[slot] = vehicle
+        print(f"Vehicle {vehicle} parked at slot {slot}")
+        return slot
