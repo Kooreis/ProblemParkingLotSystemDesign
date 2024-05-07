@@ -1,21 +1,10 @@
-using System;
-using System.Collections.Generic;
-
-public class ParkingLot
-{
-    private int capacity;
-    private int slotCount;
-    private Queue<int> availableSlots;
-
-    public ParkingLot(int capacity)
+public int ParkCar()
     {
-        this.capacity = capacity;
-        this.slotCount = 0;
-        this.availableSlots = new Queue<int>();
-
-        for (int i = 1; i <= capacity; i++)
+        if (slotCount >= capacity)
         {
-            availableSlots.Enqueue(i);
+            return -1;
         }
+
+        slotCount++;
+        return availableSlots.Dequeue();
     }
-}
